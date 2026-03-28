@@ -9,6 +9,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
+        .form-select {
+        background: rgba(255, 255, 255, 0.1) !important;
+        color: white !important;
+        border: 1px solid rgba(197, 160, 89, 0.4);
+        cursor: pointer;
+    }
+
+    /* FORCE LA VISIBILITÉ DES OPTIONS DANS LA LISTE */
+    .form-select option {
+        background-color: #0A192F; /* Fond bleu nuit identique au thème */
+        color: white !important;   /* Texte blanc pur */
+        padding: 10px;
+    }
+
+    .form-select:focus {
+        border-color: var(--gold);
+        box-shadow: 0 0 8px rgba(197, 160, 89, 0.5);
+        outline: none;
+    }
         :root {
             --navy: #0A192F;
             --gold: #C5A059;
@@ -138,14 +157,15 @@
                             <label class="form-label small">Nom Complet</label>
                             <input type="text" name="nom" class="form-control" placeholder="M. Jean Dupont" required>
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label small">Impôt Annuel estimé</label>
-                            <select name="impot" class="form-select">
-                                <option value="3-5k">3 000€ - 5 000€</option>
-                                <option value="5-10k">5 000€ - 10 000€</option>
-                                <option value="10k+">Plus de 10 000€</option>
-                            </select>
-                        </div>
+                       <div class="mb-3">
+    <label class="form-label small">Impôt Annuel estimé</label>
+    <select name="impot" class="form-select" required>
+        <option value="" disabled selected style="color: rgba(255,255,255,0.5);">Sélectionnez votre tranche</option>
+        <option value="3-5k">3 000€ - 5 000€</option>
+        <option value="5-10k">5 000€ - 10 000€</option>
+        <option value="10k+">Plus de 10 000€</option>
+    </select>
+</div>
                         <div class="mb-3">
                             <label class="form-label small">Téléphone</label>
                             <input type="tel" name="telephone" class="form-control" placeholder="06 .. .. .. .." required>
